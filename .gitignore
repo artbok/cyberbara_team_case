@@ -48,7 +48,6 @@ build/
 ios/
 linux/
 macos/
-web/
 windows/
 .metadata
 analysis_options.yaml
