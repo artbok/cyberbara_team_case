@@ -1,0 +1,10 @@
+name: inv-mgmt
+
+services:
+  client:
+    image: ghcr.io/artbok/cyberbara_team_case:latest
+    ports:
+      - "60080:80" 
+    environment:
+      - SERVER_URL=http://localhost:5000
+
