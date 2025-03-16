@@ -15,10 +15,6 @@ permissions:
 jobs:
   build-and-push-docker:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
     steps:
       - uses: actions/checkout@v3
 
@@ -54,3 +50,4 @@ jobs:
 
       - name: Push Docker image
         run: docker push ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest
+
