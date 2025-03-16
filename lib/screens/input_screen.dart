@@ -11,7 +11,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  TextEditingController controller = TextEditingController(text: "https://olimp.miet.ru/ppo_it/api");
+  TextEditingController controller =
+      TextEditingController(text: "https://olimp.miet.ru/ppo_it/api");
   String status = "";
   bool obscureText = true;
 
@@ -23,11 +24,12 @@ class _InputPageState extends State<InputPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
           Flexible(
-            flex: 2,
-            child: 
-                Flexible(
-                  flex: 1,
-                  child: Padding(padding: const EdgeInsets.all(30), child: TextFormField(
+              flex: 1,
+              child: Flexible(
+                flex: 1,
+                child: Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: TextFormField(
                     controller: controller,
                     decoration: const InputDecoration(
                       border: UnderlineInputBorder(
@@ -36,26 +38,24 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                 ),
-                )
-            
-          ),
+              )),
           Flexible(
               flex: 1,
               child: button(
                   const Text("OK",
-                      style: TextStyle(fontSize: 20, color: Colors.white)),
+                      style: TextStyle(fontSize: 40, color: Colors.white)),
                   () async {
-                  Navigator.pushReplacement(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation1, animation2) =>
+                Navigator.pushReplacement(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation1, animation2) =>
                         MapScreen(url: controller.text),
-                      transitionDuration: Duration.zero,
-                      reverseTransitionDuration: Duration.zero,
-                    ),
-                  );
-                
-              }))
+                    transitionDuration: Duration.zero,
+                    reverseTransitionDuration: Duration.zero,
+                  ),
+                );
+              })),
+          Flexible(flex: 1, child: Container())
         ]))));
   }
 }
