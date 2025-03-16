@@ -34,19 +34,19 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Web and push image
-        run: | 
-          flutter build web --release 
-          docker build -t ghcr.io/${{ github.repository_owner }}cyberbara_team_case:latest .
-          docker push ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest
+#      - name: Build Web and push image
+#        run: | 
+#          flutter build web --release 
+#          docker build -t ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest .
+#          docker push ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest
 
-#      - name: Build Web
-#        run: flutter build web --release 
+      - name: Build Web
+        run: flutter build web --release 
 
-#      - name: Build Docker image
-#        run: |
-#          docker build -t ghcr.io/${{ github.repository_owner }}cyberbara_team_case:latest . \
-#            --build-arg BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%SZ)
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest . \
+            --build-arg BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%SZ)
 
-#      - name: Push Docker image
-#        run: docker push ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest
+      - name: Push Docker image
+        run: docker push ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest
