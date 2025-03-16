@@ -4,8 +4,7 @@ app = Flask(__name__)
 
 @app.route('/', methods = ["POST"])
 def main():
-    #url = request.json['url']
-    url = "olimp.miet.ru/ppo_it/api"
+    url = request.json['url']
     matrix = getMap(url)
     # coords = getCoords(url)
     # getHighestPoint(matrix)

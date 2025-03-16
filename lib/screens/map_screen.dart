@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cyberbara_team_case/services/get_data.dart';
 
 class MapScreen extends StatefulWidget {
-  const MapScreen({super.key});
+  final String url;
+  const MapScreen({super.key, required this.url});
 
   @override
   State<MapScreen> createState() => MapScreenState();
@@ -20,7 +21,11 @@ class MapScreenState extends State<MapScreen> {
         } else {
           color = Color.fromARGB(255, 255, 0, matrix[i][j]);
         }
-        row.add(Container(color: color, width: 3, height: 3,));
+        row.add(Container(
+          color: color,
+          width: 3,
+          height: 3,
+        ));
       }
       rows.add(Row(children: row));
     }
@@ -49,7 +54,8 @@ class MapScreenState extends State<MapScreen> {
               rows.add(Row(children: row));
             }
 
-            return Column(children: rows);}});
-          
+            return Column(children: rows);
+          }
+        });
   }
 }
