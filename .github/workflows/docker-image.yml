@@ -9,8 +9,8 @@ on:
       - 'main'
 
 permissions:
-  contents: read # Necessary for checkout
-  packages: write # Grants write access to GitHub Packages
+  contents: read
+  packages: write
 
 jobs:
   build-and-push-docker:
