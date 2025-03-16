@@ -1,4 +1,4 @@
-import 'package:cyberbara_team_case/screens/home_screen.dart';
+import 'package:cyberbara_team_case/screens/map_screen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -13,7 +13,7 @@ class AppRoot extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const MapScreen(),
     );
   }
 }
