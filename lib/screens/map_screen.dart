@@ -18,9 +18,12 @@ class MapScreenState extends State<MapScreen> {
         Color color = Colors.green;
         if (matrix[i][j] == 'H') {
           color = const Color.fromARGB(255, 28, 48, 181);
-        } else {
-          color = Color.fromARGB(255, 255, 0, matrix[i][j]);
-        }
+        } else  if (matrix[i][j] == 'S') {
+          color = const Color.fromARGB(255, 27, 168, 2);
+        } else if (matrix[i][j] == 'L') {
+          color = const Color.fromARGB(255, 6, 213, 216);
+        
+        } 
         row.add(Container(
           color: color,
           width: 3,
