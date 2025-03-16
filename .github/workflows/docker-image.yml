@@ -34,7 +34,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-#      - name: Build Web and push image
+#      - name: Build Web and push image 
 #        run: | 
 #          flutter build web --release 
 #          docker build -t ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest .
