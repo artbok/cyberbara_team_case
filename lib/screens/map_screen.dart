@@ -9,18 +9,18 @@ class MapScreen extends StatefulWidget {
 }
 
 class MapScreenState extends State<MapScreen> {
-  Widget getItemWidget(List<String> matrix) {
+  Widget getItemWidget(List<dynamic> matrix) {
     List<Widget> rows = [];
-    for (int i = 0; i < 256; i++) {
+    for (int i = 0; i < 64; i++) {
       List<Widget> row = [];
-      for (int j = 0; j < 256; i++) {
+      for (int j = 0; j < 64; j++) {
         Color color = Colors.green;
         if (matrix[i][j] == 'H') {
-          color = Color.fromARGB(255, 28, 48, 181);
+          color = const Color.fromARGB(255, 28, 48, 181);
         } else {
-          color = Color.fromARGB(255, 255, 0, int.parse(matrix[i][j]));
+          color = Color.fromARGB(255, 255, 0, matrix[i][j]);
         }
-        row.add(Flexible(child: Container(color: color)));
+        row.add(Container(color: color, width: 3, height: 3,));
       }
       rows.add(Row(children: row));
     }
