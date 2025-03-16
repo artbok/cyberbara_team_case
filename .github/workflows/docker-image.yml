@@ -8,6 +8,10 @@ on:
     branches:
       - 'main'
 
+permissions:
+  contents: read # Necessary for checkout
+  packages: write # Grants write access to GitHub Packages
+
 jobs:
   build-and-push-docker:
     runs-on: ubuntu-latest
