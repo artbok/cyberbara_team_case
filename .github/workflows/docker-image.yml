@@ -45,9 +45,9 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest . \
+          docker build -t ghcr.io/${{ github.repository_owner }}/cyberbara_team_case/ui:latest . \
             --build-arg BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%SZ)
 
       - name: Push Docker image
-        run: docker push ghcr.io/${{ github.repository_owner }}/cyberbara_team_case:latest
+        run: docker push ghcr.io/${{ github.repository_owner }}/cyberbara_team_case/ui:latest
 
